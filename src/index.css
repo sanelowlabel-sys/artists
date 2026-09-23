@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --sane-red: #BE1E2F;
+  --sane-red-hover: #a11624;
+  --sane-red-light: #fef2f2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: 'Exo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-exo {
+  font-family: 'Exo', sans-serif;
+}
+
+.font-hammersmith {
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.font-mono-dm {
+  font-family: 'DM Mono', monospace;
+}
+
+/* Light canvas subtle ambient depth */
+.bg-light-canvas {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(190, 30, 47, 0.04) 0%, transparent 60%),
+    radial-gradient(circle at 10% 40%, rgba(190, 30, 47, 0.02) 0%, transparent 40%);
+}
+
+/* Rounded Cards */
+.sanelow-artist-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .sanelow-artist-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(190, 30, 47, 0.4);
+    box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(190, 30, 47, 0.08);
+  }
+}
+
+/* Rounded Embed Container & Rounded Placeholder */
+.sanelow-embed-placeholder {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.06);
+}
+
+.sanelow-embed-placeholder iframe {
+  width: 100%;
+  max-width: unset;
+  min-width: 0;
+  border: none;
+  border-radius: 16px;
+  box-shadow: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  position: relative;
+  display: block;
+}
+
+/* Minimal Top Navigation Progress Bar Animation */
+@keyframes nav-sweep {
+  0% {
+    width: 0%;
+    left: 0%;
+  }
+  50% {
+    width: 70%;
+    left: 15%;
+  }
+  100% {
+    width: 100%;
+    left: 0%;
+  }
+}
+
+.animate-nav-sweep {
+  animation: nav-sweep 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Minimal Shimmer for Embed & Image Placeholders */
+@keyframes placeholder-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.03) 100%);
+  background-size: 200% 100%;
+  animation: placeholder-shimmer 2s infinite linear;
+}
+
+/* Equalizer bounce animation */
+@keyframes eq-bounce-light {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 18px;
+  }
+}
+
+.animate-eq-1 { animation: eq-bounce-light 0.8s ease-in-out infinite; }
+.animate-eq-2 { animation: eq-bounce-light 0.8s ease-in-out 0.2s infinite; }
+.animate-eq-3 { animation: eq-bounce-light 0.8s ease-in-out 0.4s infinite; }
+.animate-eq-4 { animation: eq-bounce-light 0.8s ease-in-out 0.15s infinite; }
+
+/* Subtle Vinyl Slow Spin */
+@keyframes vinyl-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-vinyl-spin {
+  animation: vinyl-spin 12s linear infinite;
+}
+
+/* Custom clean scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

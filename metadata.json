@@ -1,0 +1,6 @@
+{
+  "name": "Sanelow Music Group Artists",
+  "description": "Official Sanelow Music Group artist roster and Spotify streaming portal featuring 23 label artists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
